@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply text-gray-900 bg-white;
+    font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #e31b23;
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid #e31b23;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-brand text-white px-7 py-3.5 rounded-full
+           font-bold text-base tracking-wide shadow-lg
+           hover:bg-brand-dark hover:-translate-y-0.5 hover:shadow-xl
+           active:translate-y-0 active:shadow-md
+           transition-all duration-300;
+    box-shadow: 0 4px 24px rgba(227, 27, 35, 0.35);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-white/70 text-white px-7 py-3.5 rounded-full
+           font-bold text-base tracking-wide
+           hover:bg-white hover:text-gray-900 hover:border-white
+           transition-all duration-300;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center gap-2 border-2 border-brand text-brand px-7 py-3.5 rounded-full
+           font-bold text-base tracking-wide
+           hover:bg-brand hover:text-white
+           transition-all duration-300;
+  }
+
+  .section-tag {
+    @apply inline-block text-brand font-bold tracking-widest uppercase text-xs mb-3;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-black text-gray-900 leading-tight tracking-tight;
+  }
+
+  .section-title-light {
+    @apply text-3xl md:text-5xl font-black text-white leading-tight tracking-tight;
+  }
+
+  .section-sub {
+    @apply text-lg text-gray-500 leading-relaxed;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+  }
+
+  .container-xl {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 md:py-24;
+  }
+}
+
+/* Ken Burns hero image animation */
+.hero-ken-burns {
+  animation: kenBurns 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-3%, -2%); }
+}
+
+/* Scroll indicator bounce */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(8px) translateX(-50%); }
+}
+
+/* Pulse glow for CTA */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(227, 27, 35, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(227, 27, 35, 0); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* WhatsApp pulse */
+@keyframes waPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Gradient shimmer for product cards */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Stat counter animation base */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* FAQ accordion */
+.faq-answer {
+  overflow: hidden;
+}
+
+/* Blog card image zoom */
+.blog-card-img {
+  transition: transform 0.6s ease;
+}
+.blog-card:hover .blog-card-img {
+  transform: scale(1.05);
+}
+
+/* Comparison table */
+.comparison-table td,
+.comparison-table th {
+  @apply px-4 py-3 text-sm text-left;
+}
+
+/* Smooth video fade-in */
+.hero-video {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.hero-video.loaded {
+  opacity: 1;
+}
