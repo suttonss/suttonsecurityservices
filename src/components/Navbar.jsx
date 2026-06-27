@@ -87,10 +87,10 @@ export default function Navbar({ onQuoteClick }) {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:07553089659"
+              href="tel:07404636800"
               className={`text-sm font-semibold transition-colors ${transparent ? 'text-white/70 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`}
             >
-              07553 089659
+              07404 636800
             </a>
             <motion.button
               whileHover={{ scale: 1.04, y: -1 }}
@@ -168,13 +168,13 @@ export default function Navbar({ onQuoteClick }) {
                 className="mt-8 space-y-4 pt-4"
               >
                 <a
-                  href="tel:07553089659"
+                  href="tel:07404636800"
                   className="flex items-center gap-3 text-gray-400 text-base font-medium hover:text-white transition-colors"
                 >
                   <svg className="w-5 h-5 flex-shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  07553 089659
+                  07404 636800
                 </a>
                 <button
                   onClick={() => { setOpen(false); onQuoteClick() }}

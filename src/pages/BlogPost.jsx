@@ -85,9 +85,9 @@ export default function BlogPost({ onQuoteClick }) {
                 >
                   Get a Free Quote
                 </motion.button>
-                <a href="tel:07553089659"
+                <a href="tel:07404636800"
                   className="inline-flex items-center gap-2 border-2 border-gray-200 text-gray-700 px-6 py-3 rounded-full font-bold text-sm hover:border-gray-300 transition-colors">
-                  Call 07553 089659
+                  Call 07404 636800
                 </a>
               </div>
             </div>

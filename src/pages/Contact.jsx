@@ -5,8 +5,8 @@ const methods = [
   {
     icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>,
     label: 'Phone',
-    value: '07553 089659',
-    action: 'tel:07553089659',
+    value: '07404 636800',
+    action: 'tel:07404636800',
     cta: 'Call Now',
     color: 'bg-blue-50 text-blue-600',
     note: 'Available 7 days a week',
@@ -23,8 +23,8 @@ const methods = [
   {
     icon: <svg className="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.8 0-222.8 100-222.9 222.9 0 39.2 10.2 77.5 29.6 111.2L0 480l116.2-30.5c32.4 17.7 68.9 27 107.7 27h.1c122.8 0 222.8-100 222.9-222.9 0-59.4-23.1-115.2-66-156.5z"/></svg>,
     label: 'WhatsApp',
-    value: '07553 089659',
-    action: 'https://wa.me/447553089659',
+    value: '07404 636800',
+    action: 'https://wa.me/447404636800',
     cta: 'Chat on WhatsApp',
     color: 'bg-green-50 text-green-600',
     note: 'Fastest response time',
@@ -101,7 +101,7 @@ export default function Contact() {
           <h2 className="section-title mb-4">Not ready to call?</h2>
           <p className="text-gray-500 mb-8">No problem. Drop us a WhatsApp any time and we'll respond when we can. Or start a quote online and we'll call you.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="https://wa.me/447553089659" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/447404636800" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 bg-[#25d366] text-white px-7 py-3.5 rounded-full font-bold hover:opacity-90 transition-opacity">
               <svg className="w-5 h-5" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.8 0-222.8 100-222.9 222.9 0 39.2 10.2 77.5 29.6 111.2L0 480l116.2-30.5c32.4 17.7 68.9 27 107.7 27h.1c122.8 0 222.8-100 222.9-222.9 0-59.4-23.1-115.2-66-156.5z"/></svg>
               WhatsApp Us

@@ -140,9 +140,9 @@ export default function Services({ onQuoteClick }) {
               className="bg-white text-brand px-8 py-4 rounded-full font-black text-base shadow-xl">
               Start Quote
             </motion.button>
-            <a href="tel:07553089659"
+            <a href="tel:07404636800"
               className="flex items-center gap-2 border-2 border-white/40 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white/10 transition-all">
-              Call 07553 089659
+              Call 07404 636800
             </a>
           </div>
         </div>

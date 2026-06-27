@@ -94,7 +94,7 @@ export default function Blog() {
             <p className="text-brand font-bold tracking-widest uppercase text-xs mb-3">Ready to Act?</p>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">Get expert advice on your property</h2>
             <p className="text-gray-500 mb-8">Book a free survey and we'll tell you exactly what you need and what you don't.</p>
-            <a href="https://wa.me/447553089659" target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href="https://wa.me/447404636800" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Chat with an Expert
             </a>
           </AnimatedSection>

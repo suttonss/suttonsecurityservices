@@ -65,11 +65,11 @@ export default function Footer() {
             <p className="text-white font-bold tracking-wider uppercase text-xs mb-5">Get In Touch</p>
             <ul className="space-y-3">
               <li>
-                <a href="tel:07553089659" className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2">
+                <a href="tel:07404636800" className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2">
                   <svg className="w-4 h-4 text-brand flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  07553 089659
+                  07404 636800
                 </a>
               </li>
               <li>
@@ -81,7 +81,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/447553089659" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2">
+                <a href="https://wa.me/447404636800" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2">
                   <svg className="w-4 h-4 text-[#25d366] flex-shrink-0" viewBox="0 0 448 512" fill="currentColor">
                     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.8 0-222.8 100-222.9 222.9 0 39.2 10.2 77.5 29.6 111.2L0 480l116.2-30.5c32.4 17.7 68.9 27 107.7 27h.1c122.8 0 222.8-100 222.9-222.9 0-59.4-23.1-115.2-66-156.5zM224 438.7h-.1c-34.6 0-68.5-9.3-98.2-26.8l-7-4.2-68.9 18.1 18.4-67.2-4.6-7c-17.5-27.8-26.8-59.8-26.8-93.1C36.8 153.1 121.9 68 224 68c50.8 0 98.5 19.8 134.4 55.7 35.9 35.9 55.6 83.7 55.6 134.4-.1 104.6-85.2 183.1-190 183.1z"/>
                   </svg>

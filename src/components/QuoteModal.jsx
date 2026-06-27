@@ -78,7 +78,7 @@ export default function QuoteModal({ isOpen, onClose }) {
     const message = encodeURIComponent(
       `Hi! I'd like a free Ajax alarm quote.\n\nProperty: ${propertyLabel} (${sizeLabel})\nNeeds: ${needsLabels}\n\nName: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}${data.postcode ? `\nPostcode: ${data.postcode}` : ''}`
     )
-    window.open(`https://wa.me/447553089659?text=${message}`, '_blank')
+    window.open(`https://wa.me/447404636800?text=${message}`, '_blank')
     setDone(true)
   }
 
