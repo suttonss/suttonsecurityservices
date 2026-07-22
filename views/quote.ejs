@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Get a Free Quote | Sutton Security Systems', pageDesc: 'Answer a few quick questions about your home and get a free, no-obligation quote for a wireless Ajax alarm system with no monthly fees.' }) %>
+</head>
+<body class="bg-gray-50">
+  <%- include('partials/header') %>
+
+  <main>
+    <section class="py-12 sm:py-16">
+      <div class="container-x">
+        <div class="grid lg:grid-cols-[320px,1fr] gap-8 items-start">
+
+          <!-- Sidebar reassurance -->
+          <aside class="hidden lg:block sticky top-28 space-y-4">
+            <div class="card p-6">
+              <h2 class="font-semibold text-xl">Your free quote</h2>
+              <p class="text-sm text-slate-soft mt-2">Takes under a minute. No obligation, no pushy sales calls.</p>
+              <ul class="mt-5 space-y-3 text-sm">
+                <% ['Free home survey included','One-time payment from £499.99','No monthly fees, ever','Same-week installation available'].forEach(function(item){ %>
+                  <li class="flex items-center gap-2.5">
+                    <span class="grid place-items-center w-5 h-5 rounded-full bg-brand text-white shrink-0"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span>
+                    <span class="font-medium"><%= item %></span>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+            <div class="card p-6 bg-ink text-white border-0">
+              <p class="text-sm text-white/75">Prefer to talk it through?</p>
+              <a href="tel:07404636800" class="mt-2 block text-xl font-semibold hover:text-brand transition-colors">07404 636800</a>
+            </div>
+          </aside>
+
+          <!-- Wizard -->
+          <div class="card p-6 sm:p-10">
+            <!-- Progress -->
+            <div class="mb-8">
+              <div class="flex items-center justify-between text-xs font-semibold text-slate-soft mb-2">
+                <span id="stepLabel">Step 1 of 5</span>
+                <span id="stepPercent">20%</span>
+              </div>
+              <div class="h-2 rounded-full bg-gray-100 overflow-hidden">
+                <div id="progressBar" class="h-full bg-brand rounded-full transition-all duration-500" style="width:20%"></div>
+              </div>
+            </div>
+
+            <form id="quoteWizard" novalidate>
+              <!-- Step 1: property type -->
+              <div class="wizard-step active" data-step="1">
+                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">What type of property do you want to protect?</h1>
+                <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3" data-group="property">
+                  <button type="button" class="option-card" data-value="House">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3l9-8z"/></svg></span>
+                    <span class="font-semibold text-sm">House</span>
+                  </button>
+                  <button type="button" class="option-card" data-value="Flat">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14a1 1 0 011 1v17h-6v-4h-4v4H4V4a1 1 0 011-1zm3 4v3h3V7H8zm5 0v3h3V7h-3zM8 12v3h3v-3H8zm5 0v3h3v-3h-3z"/></svg></span>
+                    <span class="font-semibold text-sm">Flat</span>
+                  </button>
+                  <button type="button" class="option-card" data-value="Bungalow">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5l10 7h-3v7H5v-7H2l10-7zm-2 9v5h4v-5h-4z"/></svg></span>
+                    <span class="font-semibold text-sm">Bungalow</span>
+                  </button>
+                  <button type="button" class="option-card" data-value="Other">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
+                    <span class="font-semibold text-sm">Other</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: bedrooms -->
+              <div class="wizard-step" data-step="2">
+                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">How many bedrooms does it have?</h1>
+                <p class="mt-2 text-slate-soft">This helps us estimate how many sensors you might need.</p>
+                <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3" data-group="bedrooms">
+                  <% ['1-2', '3', '4', '5+'].forEach(function(b){ %>
+                    <button type="button" class="option-card" data-value="<%= b %> bedrooms">
+                      <span class="oc-icon text-lg font-semibold"><%= b %></span>
+                      <span class="font-semibold text-sm">Bedrooms</span>
+                    </button>
+                  <% }) %>
+                </div>
+              </div>
+
+              <!-- Step 3: current alarm -->
+              <div class="wizard-step" data-step="3">
+                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Do you currently have an alarm?</h1>
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3" data-group="alarm">
+                  <button type="button" class="option-card" data-value="Yes, and it works">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span>
+                    <span class="font-semibold text-sm">Yes, it works</span>
+                  </button>
+                  <button type="button" class="option-card" data-value="Yes, but it is old or broken">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7v3l-2 4h18l-2-4V9a7 7 0 00-7-7zm0 20a3 3 0 003-3H9a3 3 0 003 3z"/></svg></span>
+                    <span class="font-semibold text-sm">Yes, but old or broken</span>
+                  </button>
+                  <button type="button" class="option-card" data-value="No alarm">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+                    <span class="font-semibold text-sm">No alarm</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 4: timing -->
+              <div class="wizard-step" data-step="4">
+                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">When would you like it installed?</h1>
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3" data-group="timing">
+                  <button type="button" class="option-card" data-value="As soon as possible">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+                    <span class="font-semibold text-sm">As soon as possible</span>
+                  </button>
+                  <button type="button" class="option-card" data-value="In the next few weeks">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h3V2zm-2 8v10h14V10H5z"/></svg></span>
+                    <span class="font-semibold text-sm">Next few weeks</span>
+                  </button>
+                  <button type="button" class="option-card" data-value="Just researching">
+                    <span class="oc-icon"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 105.3 14l5.4 5.3 1.4-1.4-5.4-5.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg></span>
+                    <span class="font-semibold text-sm">Just researching</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 5: contact details -->
+              <div class="wizard-step" data-step="5">
+                <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Nearly there. Where do we send your quote?</h1>
+                <p class="mt-2 text-slate-soft">A local engineer will call you back the same day with your free quote.</p>
+                <div class="mt-8 grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium mb-1.5" for="qName">Full name</label>
+                    <input id="qName" type="text" class="field" placeholder="Jane Smith" autocomplete="name" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-1.5" for="qPhone">Phone number</label>
+                    <input id="qPhone" type="tel" class="field" placeholder="07000 000000" autocomplete="tel" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-1.5" for="qEmail">Email <span class="text-slate-soft font-normal">(optional)</span></label>
+                    <input id="qEmail" type="email" class="field" placeholder="you@example.com" autocomplete="email" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-1.5" for="qPostcode">Postcode</label>
+                    <input id="qPostcode" type="text" class="field" placeholder="SW1A 1AA" autocomplete="postal-code" />
+                  </div>
+                </div>
+                <p id="contactError" class="hidden mt-4 text-sm font-medium text-brand">Please add your name, phone number and postcode so we can prepare your quote.</p>
+                <p class="mt-6 text-xs text-slate-soft">By requesting a quote you agree to our <a href="/privacy" class="underline hover:text-brand">Privacy Policy</a>. We only use your details to contact you about your quote.</p>
+              </div>
+
+              <!-- Step 6: done -->
+              <div class="wizard-step" data-step="6">
+                <div class="text-center py-8">
+                  <span class="mx-auto grid place-items-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg>
+                  </span>
+                  <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Thanks, <span id="doneName">there</span>!</h1>
+                  <p class="mt-3 text-slate-soft max-w-md mx-auto">Your quote request is ready. A Sutton engineer will call you the same working day to talk through your free quote and book your survey.</p>
+                  <div id="summaryBox" class="mt-8 max-w-sm mx-auto text-left card bg-gray-50 border border-black/5 shadow-none p-5 text-sm space-y-2"></div>
+                  <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a id="whatsappLink" href="https://wa.me/447404636800" target="_blank" rel="noopener" class="btn text-white bg-[#25D366] hover:bg-[#1EBE5A] shadow-soft hover:-translate-y-0.5 hover:shadow-lg text-base">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.5-.3.3c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.6.3.1.3.1.9-.1 1.4z"/></svg>
+                      Send My Quote On WhatsApp
+                    </a>
+                    <a id="mailtoLink" href="mailto:contact@suttonss.co.uk" class="btn-ghost">Or Email It Instead</a>
+                  </div>
+                  <p class="mt-4 text-xs text-slate-soft">WhatsApp opens with your quote details prefilled, just press send. We reply the same working day.</p>
+                </div>
+              </div>
+
+              <!-- Nav buttons -->
+              <div id="wizardNav" class="mt-10 flex items-center justify-between">
+                <button type="button" id="backBtn" class="btn-ghost invisible">Back</button>
+                <button type="button" id="nextBtn" class="btn-primary opacity-40 pointer-events-none">Continue</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

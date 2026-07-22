@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body class="bg-white">
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- HERO: full-bleed lifestyle photo, ADT style -->
+    <section class="relative overflow-hidden bg-ink text-white">
+      <div class="absolute inset-0">
+        <img src="/assets/family-home.jpg" alt="" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/20"></div>
+      </div>
+      <div class="container-x relative py-20 sm:py-28 lg:py-36">
+        <div class="max-w-xl reveal in">
+          <h1 class="text-3xl sm:text-4xl font-semibold leading-[1.1] tracking-tight">
+            You can't always be home. Your security can.
+          </h1>
+          <p class="mt-6 text-lg text-white/90 max-w-lg leading-relaxed">
+            Professionally installed, 100% wireless Ajax alarm systems. Own it outright from day one. No subscriptions, no contracts, no catch.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="/quote" class="btn-cta text-base">Get a free quote</a>
+            <a href="/crime-in-your-area" class="btn-outline text-base">Check crime in my area</a>
+          </div>
+          <p class="mt-5 flex items-center gap-2 text-sm text-white/80">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg>
+            Free survey &nbsp;&bull;&nbsp; No obligation &nbsp;&bull;&nbsp; Same-day reply
+          </p>
+        </div>
+      </div>
+
+      <!-- Marquee trust strip -->
+      <div class="relative border-t border-white/10 bg-black/10 marquee overflow-hidden">
+        <div class="flex marquee-track whitespace-nowrap py-3 text-sm font-semibold text-white/80">
+          <% for (var m = 0; m < 2; m++) { %>
+            <span class="flex items-center gap-3 px-8">No monthly fees<span class="text-brand">&bull;</span></span>
+            <span class="flex items-center gap-3 px-8">100% wireless Ajax systems<span class="text-brand">&bull;</span></span>
+            <span class="flex items-center gap-3 px-8">Same-week installation<span class="text-brand">&bull;</span></span>
+            <span class="flex items-center gap-3 px-8">Own your system outright<span class="text-brand">&bull;</span></span>
+            <span class="flex items-center gap-3 px-8">Control from your phone<span class="text-brand">&bull;</span></span>
+            <span class="flex items-center gap-3 px-8">Trusted in 187 countries<span class="text-brand">&bull;</span></span>
+          <% } %>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF BAND -->
+    <section class="bg-white border-b border-black/5">
+      <div class="container-x py-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <%
+            var proofs = [
+              { v: '3M+', l: 'Homes protected by Ajax worldwide' },
+              { v: '187', l: 'Countries trust the technology we fit' },
+              { v: '£0', l: 'Monthly fees with Sutton, forever' },
+              { v: '1 day', l: 'Typical installation, start to finish' }
+            ];
+          %>
+          <% proofs.forEach(function(p, i){ %>
+            <div class="reveal reveal-delay-<%= (i % 3) + 1 %>">
+              <div class="text-4xl font-semibold text-brand"><%= p.v %></div>
+              <div class="mt-1.5 text-sm text-slate-soft font-medium max-w-[180px] mx-auto"><%= p.l %></div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="py-20 sm:py-24">
+      <div class="container-x">
+        <div class="max-w-2xl mb-14 reveal">
+          <span class="eyebrow text-brand mb-3">Why Sutton Security</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Security without the small print</h2>
+          <p class="mt-4 text-slate-soft text-lg">World-class Ajax alarm systems with no hidden costs. One price, no ongoing fees, ever.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <%
+            var features = [
+              { t: 'No Monthly Fees', d: 'Own your system outright. No subscriptions, no contracts, no surprises. Pay once, protected for good.', p: 'M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm-1 15l-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z' },
+              { t: 'Smartphone Control', d: 'Arm, disarm and monitor your home from anywhere in the world through the Ajax app.', p: 'M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2zm5 17a1 1 0 100 2 1 1 0 000-2z' },
+              { t: '100% Wireless', d: 'Fully wireless Ajax systems. Minimal drilling, no messy cables, maximum protection.', p: 'M12 3C7 3 3 6 1 10l2 1c1.6-3 5-5 9-5s7.4 2 9 5l2-1c-2-4-6-7-11-7zm0 5a8 8 0 00-6 2.7l2 1.4A5 5 0 0112 11a5 5 0 014 2.1l2-1.4A8 8 0 0012 8zm0 5a3 3 0 00-2.4 1.2L12 18l2.4-2.8A3 3 0 0012 13z' },
+              { t: 'Real Local Support', d: 'When you call, you speak to the engineer who installed your system. Real people, local help.', p: 'M12 2a9 9 0 00-9 9v5a3 3 0 003 3h1v-8H5a7 7 0 0114 0h-2v8h1a3 3 0 003-3v-5a9 9 0 00-9-9z' }
+            ];
+          %>
+          <% features.forEach(function(f, i){ %>
+            <div class="card p-6 hover:-translate-y-1 transition-transform duration-200 reveal reveal-delay-<%= (i % 3) + 1 %>">
+              <span class="grid place-items-center w-12 h-12 rounded-xl bg-brand-tint text-brand mb-5">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="<%= f.p %>"/></svg>
+              </span>
+              <h3 class="font-semibold text-lg mb-2"><%= f.t %></h3>
+              <p class="text-sm text-slate-soft leading-relaxed"><%= f.d %></p>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARE TEASER -->
+    <section class="py-20 sm:py-24 bg-gray-50">
+      <div class="container-x grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="eyebrow text-brand mb-3">How We Compare</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Big-name protection, without the big-name bills</h2>
+          <p class="mt-4 text-slate-soft text-lg leading-relaxed">
+            The big names often charge &pound;1,000 or more to get set up, then a monthly subscription on top for years. With Sutton, protection starts from just &pound;499.99 as a one-time payment, and after that you pay nothing. Ever.
+          </p>
+          <a href="/why-sutton#compare" class="btn-primary mt-8">See The Full Comparison</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4 reveal reveal-delay-2">
+          <div class="card p-6 border-2 border-brand">
+            <p class="text-xs font-semibold tracking-widest uppercase text-brand mb-2">Sutton Security</p>
+            <p class="text-3xl font-semibold">From &pound;499.99</p>
+            <p class="text-sm text-slate-soft mt-1">one-time payment</p>
+            <p class="mt-4 text-2xl font-semibold text-green-600">&pound;0<span class="text-sm font-semibold text-slate-soft">/month</span></p>
+          </div>
+          <div class="card p-6 opacity-80">
+            <p class="text-xs font-semibold tracking-widest uppercase text-slate-soft mb-2">Subscription alarms</p>
+            <p class="text-3xl font-semibold">&pound;1,000+</p>
+            <p class="text-sm text-slate-soft mt-1">typical setup, plus a contract</p>
+            <p class="mt-4 text-2xl font-semibold text-brand">&pound;&pound;&pound;<span class="text-sm font-semibold text-slate-soft">/month, for years</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIFESTYLE BLOCKS -->
+    <section class="py-16 sm:py-20">
+      <div class="container-x">
+        <div class="max-w-2xl mb-10 reveal">
+          <span class="eyebrow text-brand mb-3">Whatever Home Means To You</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Security designed around your life</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card overflow-hidden reveal">
+            <img src="/assets/house-1.jpg" alt="A family home protected at night" class="w-full aspect-[16/10] object-cover" />
+            <div class="p-6">
+              <h3 class="font-semibold mb-1.5">Protected while you sleep</h3>
+              <p class="text-sm text-slate-soft leading-relaxed">Night mode keeps the perimeter armed while your family moves freely inside.</p>
+              <a href="/security-systems" class="mega-card-link">Explore the system <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="card overflow-hidden reveal reveal-delay-1">
+            <img src="/assets/family-outside.jpg" alt="A family enjoying time outdoors" class="w-full aspect-[16/10] object-cover" />
+            <div class="p-6">
+              <h3 class="font-semibold mb-1.5">Protected while you are out</h3>
+              <p class="text-sm text-slate-soft leading-relaxed">Check in from anywhere with the app. Instant alerts if anything happens.</p>
+              <a href="/security-systems#app" class="mega-card-link">See the app <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="card overflow-hidden reveal reveal-delay-2">
+            <img src="/assets/survey.jpg" alt="Designing a bespoke security plan" class="w-full aspect-[16/10] object-cover" />
+            <div class="p-6">
+              <h3 class="font-semibold mb-1.5">Designed for your home</h3>
+              <p class="text-sm text-slate-soft leading-relaxed">Every system starts with a free survey and a plan built around your property.</p>
+              <a href="/quote" class="mega-card-link">Book a free survey <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-20 sm:py-24">
+      <div class="container-x">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="eyebrow text-brand mb-3">Simple Process</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Protected in three easy steps</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <%
+            var steps = [
+              { n: '01', t: 'Free Home Survey', d: 'We visit your property and design a bespoke Ajax security plan tailored to your home and the risks in your area.' },
+              { n: '02', t: 'Expert Installation', d: 'Our engineers install your system cleanly and efficiently, typically in a single day, with no mess left behind.' },
+              { n: '03', t: "You're Protected", d: 'We walk you through the Ajax app, give you a full demo and leave you fully protected from day one.' }
+            ];
+          %>
+          <% steps.forEach(function(s, i){ %>
+            <div class="relative card p-8 reveal reveal-delay-<%= i+1 %>">
+              <span class="text-4xl font-semibold text-brand/15"><%= s.n %></span>
+              <h3 class="font-semibold text-xl mt-3 mb-2"><%= s.t %></h3>
+              <p class="text-slate-soft leading-relaxed"><%= s.d %></p>
+            </div>
+          <% }) %>
+        </div>
+        <div class="text-center mt-10 reveal">
+          <a href="/quote" class="btn-primary text-base">Start Your Free Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-20 sm:py-24 bg-gray-50">
+      <div class="container-x">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="eyebrow text-brand mb-3">Homeowners Love Us</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Trusted by local families</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <%
+            var reviews = [
+              { q: 'Clean, professional install and no monthly fees was exactly what we wanted. The app is brilliant.', a: 'Sarah M.', l: 'London' },
+              { q: 'Booked a free survey, installed the same week. You genuinely speak to the engineer who fitted it.', a: 'David P.', l: 'Birmingham' },
+              { q: 'Fully wireless so no mess at all. We feel so much safer and it pays for itself with no subscription.', a: 'Amara K.', l: 'Manchester' }
+            ];
+          %>
+          <% reviews.forEach(function(r, i){ %>
+            <div class="card p-7 reveal reveal-delay-<%= i+1 %>">
+              <div class="flex gap-1 text-brand mb-4">
+                <% for (var i2=0;i2<5;i2++){ %><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><% } %>
+              </div>
+              <p class="text-ink/80 leading-relaxed mb-5">"<%= r.q %>"</p>
+              <div class="flex items-center gap-3">
+                <span class="grid place-items-center w-10 h-10 rounded-full bg-brand-tint text-brand font-semibold"><%= r.a.charAt(0) %></span>
+                <div>
+                  <div class="font-semibold text-sm"><%= r.a %></div>
+                  <div class="text-xs text-slate-soft"><%= r.l %></div>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 sm:py-24">
+      <div class="container-x max-w-3xl">
+        <div class="text-center mb-12 reveal">
+          <span class="eyebrow text-brand mb-3">FAQ</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Common questions</h2>
+        </div>
+        <div class="divide-y divide-black/10 border-y border-black/10 reveal reveal-delay-1">
+          <%
+            var faqs = [
+              { q: 'How long does installation take?', a: 'Most residential Ajax systems are installed in a single day. After a free survey we confirm the exact timing before we book you in.' },
+              { q: 'Do I need to pay a monthly fee?', a: 'No. You own your Ajax system outright. There are no subscriptions, no contracts and no ongoing fees of any kind.' },
+              { q: 'How much does it cost?', a: 'Systems start from 499.99 pounds as a one-time payment, with the final price depending on the size of your home and the devices you need. That is the only payment, there is nothing monthly afterwards.' },
+              { q: 'What areas do you cover?', a: 'We install for homes across the UK, including London, Birmingham, Manchester, Leeds and Glasgow. Start a free quote and we will confirm coverage for your postcode.' },
+              { q: 'Is Ajax compatible with my smartphone?', a: 'Yes. The free Ajax app works on both iOS and Android, letting you arm, disarm and monitor your home from anywhere.' },
+              { q: 'What happens during a power cut?', a: 'Ajax hubs include battery backup and can use mobile data, so your system keeps protecting your home even without mains power or Wi-Fi.' }
+            ];
+          %>
+          <% faqs.forEach(function(f){ %>
+            <details class="group py-5">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-lg">
+                <%= f.q %>
+                <span class="ml-4 grid place-items-center w-8 h-8 rounded-full bg-brand-tint text-brand shrink-0 group-open:rotate-45 transition-transform">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </span>
+              </summary>
+              <p class="mt-3 text-slate-soft leading-relaxed pr-10"><%= f.a %></p>
+            </details>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="py-20 sm:py-24 bg-gradient-to-br from-brand-darker via-brand-dark to-brand text-white">
+      <div class="container-x text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight reveal">Ready to protect your home?</h2>
+        <p class="mt-4 text-white/85 text-lg max-w-xl mx-auto reveal reveal-delay-1">Free survey. Free quote. No obligation. Answer a few quick questions and we will call you back the same day.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center reveal reveal-delay-2">
+          <a href="/quote" class="btn-white text-base">Get My Free Quote</a>
+          <a href="tel:07404636800" class="btn-outline text-base">Call 07404 636800</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

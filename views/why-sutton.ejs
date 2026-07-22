@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Why Sutton | Compare Us To ADT & Verisure | Sutton Security Systems', pageDesc: 'See how Sutton Security compares to ADT and Verisure. One-time payment from 499.99 pounds, no monthly fees and you own the system outright.' }) %>
+</head>
+<body class="bg-white">
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Page hero -->
+    <section class="bg-gradient-to-br from-brand-darker via-brand-dark to-brand text-white">
+      <div class="container-x py-16 sm:py-20">
+        <span class="eyebrow text-white/80 mb-3">Why Sutton</span>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight max-w-2xl">The smarter way to pay for home security</h1>
+        <p class="mt-5 text-lg text-white/85 max-w-2xl">The big subscription brands protect your home and charge you every month for years. We protect your home once, properly, and then leave your bank account alone.</p>
+        <a href="/quote" class="btn-white mt-8">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section id="compare" class="py-20 sm:py-24 scroll-mt-20">
+      <div class="container-x">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="eyebrow text-brand mb-3">How We Compare</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Sutton vs ADT vs Verisure</h2>
+          <p class="mt-4 text-slate-soft text-lg">Both ADT and Verisure are subscription services: you pay to get set up, then keep paying every month. Here is how owning your system with Sutton stacks up.</p>
+        </div>
+        <div class="card overflow-hidden reveal reveal-delay-1">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm min-w-[640px]">
+              <thead>
+                <tr class="border-b border-black/10">
+                  <th class="text-left font-semibold text-slate-soft p-5">What you get</th>
+                  <th class="p-5 text-center bg-brand/5 w-44">
+                    <span class="text-brand font-semibold text-base">Sutton Security</span>
+                  </th>
+                  <th class="p-5 text-center font-semibold text-slate-soft w-36">ADT</th>
+                  <th class="p-5 text-center font-semibold text-slate-soft w-36">Verisure</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%
+                  var rows = [
+                    ['No monthly subscription, ever', true, false, false],
+                    ['You own the equipment outright', true, false, false],
+                    ['No long-term contract to sign', true, false, false],
+                    ['One-time payment, from £499.99', true, false, false],
+                    ['Professional installation', true, true, true],
+                    ['Smartphone app control', true, true, true],
+                    ['Speak directly to your installer for support', true, false, false],
+                    ['Same-week installation available', true, false, false]
+                  ];
+                  function tick(v){ return v ? '<span class="inline-grid place-items-center w-7 h-7 rounded-full bg-green-100 text-green-700">&#10003;</span>' : '<span class="inline-grid place-items-center w-7 h-7 rounded-full bg-red-50 text-brand">&#10007;</span>'; }
+                %>
+                <% rows.forEach(function(r, i){ %>
+                  <tr class="<%= i < rows.length-1 ? 'border-b border-black/5' : '' %>">
+                    <td class="p-5 font-medium text-ink"><%= r[0] %></td>
+                    <td class="p-5 text-center bg-brand/5"><%- tick(r[1]) %></td>
+                    <td class="p-5 text-center"><%- tick(r[2]) %></td>
+                    <td class="p-5 text-center"><%- tick(r[3]) %></td>
+                  </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="text-xs text-slate-soft/70 mt-4 max-w-3xl">Comparison based on publicly available information about typical monitored alarm packages from ADT and Verisure in the UK as of July 2026. Both operate subscription models where monitoring requires an ongoing monthly payment and equipment is installed as part of a service package. Details vary by package, always check the latest terms with each provider. ADT and Verisure are trademarks of their respective owners; Sutton Security is not affiliated with either.</p>
+      </div>
+    </section>
+
+    <!-- TRUE COST -->
+    <section id="cost" class="py-20 sm:py-24 bg-gray-50 scroll-mt-20">
+      <div class="container-x">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="eyebrow text-brand mb-3">The True Cost</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Monthly fees add up fast</h2>
+          <p class="mt-4 text-slate-soft text-lg">A subscription alarm does not look expensive on day one. But pay an install fee plus a monthly charge for five years and the total quietly climbs into the thousands, and you still do not own the system.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 items-stretch">
+          <div class="card p-8 border-2 border-brand relative overflow-hidden reveal">
+            <span class="absolute top-5 right-5 text-[11px] font-semibold tracking-widest uppercase bg-brand text-white rounded-full px-3 py-1">Sutton</span>
+            <h3 class="font-semibold text-xl">Own it outright</h3>
+            <p class="mt-1 text-sm text-slate-soft">Typical residential installation</p>
+            <p class="mt-6 text-4xl font-semibold text-ink">From &pound;499.99</p>
+            <p class="mt-2 text-sm font-semibold text-green-600">One payment. That is it.</p>
+            <ul class="mt-6 space-y-2.5 text-sm text-slate-soft">
+              <li class="flex gap-2"><span class="text-brand font-semibold">&#10003;</span> Equipment, installation and setup included</li>
+              <li class="flex gap-2"><span class="text-brand font-semibold">&#10003;</span> Simple 50% deposit, 50% on completion</li>
+              <li class="flex gap-2"><span class="text-brand font-semibold">&#10003;</span> &pound;0 per month, forever</li>
+              <li class="flex gap-2"><span class="text-brand font-semibold">&#10003;</span> Cost after 5 years: exactly what you paid on day one</li>
+            </ul>
+          </div>
+          <div class="card p-8 opacity-90 reveal reveal-delay-1">
+            <span class="absolute"></span>
+            <h3 class="font-semibold text-xl">Typical subscription alarm</h3>
+            <p class="mt-1 text-sm text-slate-soft">How ADT and Verisure style packages work</p>
+            <p class="mt-6 text-4xl font-semibold text-ink">&pound;1,000+<span class="text-2xl text-slate-soft font-semibold"> then monthly</span></p>
+            <p class="mt-2 text-sm font-semibold text-brand">The bill never stops arriving.</p>
+            <ul class="mt-6 space-y-2.5 text-sm text-slate-soft">
+              <li class="flex gap-2"><span class="text-brand font-semibold">&#10007;</span> Upfront installation and activation charges</li>
+              <li class="flex gap-2"><span class="text-brand font-semibold">&#10007;</span> Monthly monitoring fees, month after month, year after year</li>
+              <li class="flex gap-2"><span class="text-brand font-semibold">&#10007;</span> After 5 years of payments, the system still is not yours</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-xs text-slate-soft/70 mt-4">Sutton pricing is a typical range for a standard residential installation, your exact quote depends on your home and chosen devices. Competitor cost structure described generally, based on publicly advertised subscription models as of July 2026.</p>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-20 sm:py-24 scroll-mt-20">
+      <div class="container-x">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="eyebrow text-brand mb-3">Simple Process</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Protected in three easy steps</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <%
+            var steps = [
+              { n: '01', t: 'Free Home Survey', d: 'We visit your property and design a bespoke Ajax security plan tailored to your home and the risks in your area.' },
+              { n: '02', t: 'Expert Installation', d: 'Our engineers install your system cleanly and efficiently, typically in a single day, with no mess left behind.' },
+              { n: '03', t: "You're Protected", d: 'We walk you through the Ajax app, give you a full demo and leave you fully protected from day one.' }
+            ];
+          %>
+          <% steps.forEach(function(s, i){ %>
+            <div class="relative card p-8 reveal reveal-delay-<%= i+1 %>">
+              <span class="text-4xl font-semibold text-brand/15"><%= s.n %></span>
+              <h3 class="font-semibold text-xl mt-3 mb-2"><%= s.t %></h3>
+              <p class="text-slate-soft leading-relaxed"><%= s.d %></p>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-20 sm:py-24 bg-gray-50 scroll-mt-20">
+      <div class="container-x">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="eyebrow text-brand mb-3">Homeowners Love Us</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Trusted by local families</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <%
+            var reviews = [
+              { q: 'Clean, professional install and no monthly fees was exactly what we wanted. The app is brilliant.', a: 'Sarah M.', l: 'London' },
+              { q: 'Booked a free survey, installed the same week. You genuinely speak to the engineer who fitted it.', a: 'David P.', l: 'Birmingham' },
+              { q: 'Fully wireless so no mess at all. We feel so much safer and it pays for itself with no subscription.', a: 'Amara K.', l: 'Manchester' }
+            ];
+          %>
+          <% reviews.forEach(function(r, i){ %>
+            <div class="card p-7 reveal reveal-delay-<%= i+1 %>">
+              <div class="flex gap-1 text-brand mb-4">
+                <% for (var i2=0;i2<5;i2++){ %><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg><% } %>
+              </div>
+              <p class="text-ink/80 leading-relaxed mb-5">"<%= r.q %>"</p>
+              <div class="flex items-center gap-3">
+                <span class="grid place-items-center w-10 h-10 rounded-full bg-brand-tint text-brand font-semibold"><%= r.a.charAt(0) %></span>
+                <div>
+                  <div class="font-semibold text-sm"><%= r.a %></div>
+                  <div class="text-xs text-slate-soft"><%= r.l %></div>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16">
+      <div class="container-x">
+        <div class="rounded-3xl bg-gradient-to-br from-brand-darker via-brand-dark to-brand text-white p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 reveal">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Stop renting your security</h2>
+            <p class="mt-2 text-white/85">Get a free, no-obligation quote and own your protection outright.</p>
+          </div>
+          <a href="/quote" class="btn-white text-base whitespace-nowrap">Start My Free Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

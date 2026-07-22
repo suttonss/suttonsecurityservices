@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Moving Home | Sutton Security Systems', pageDesc: 'Moving house? Your Sutton Ajax alarm system can move with you, or we can protect your new home from day one.' }) %>
+</head>
+<body class="bg-white">
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Page hero -->
+    <section class="bg-ink text-white">
+      <div class="container-x py-14 sm:py-16 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal in">
+          <span class="eyebrow text-brand mb-3">Moving Home</span>
+          <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Take your security with you</h1>
+          <p class="mt-4 text-white/85 text-lg leading-relaxed">Because you own your Ajax system outright, it moves when you do. We uninstall it, refit it at your new address and test everything, so your new house is protected from the first night.</p>
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="tel:07404636800" class="btn-cta">Arrange my move</a>
+            <a href="/quote" class="btn-outline">Protect a new home</a>
+          </div>
+        </div>
+        <div class="reveal in reveal-delay-2">
+          <img src="/assets/house-1.jpg" alt="A family home at dusk" class="rounded-lg shadow-card w-full object-cover aspect-[4/3]" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Options -->
+    <section class="py-16 sm:py-20">
+      <div class="container-x">
+        <div class="max-w-2xl mb-10 reveal">
+          <span class="eyebrow text-brand mb-3">Your Options</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Two simple ways to stay protected</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="card overflow-hidden reveal">
+            <img src="/assets/house-2.jpg" alt="A new family home" class="w-full aspect-[16/9] object-cover" />
+            <div class="p-7">
+              <h3 class="font-semibold text-lg mb-2">Move your existing system</h3>
+              <p class="text-sm text-slate-soft leading-relaxed">Your Ajax equipment is yours, so it comes with you. We remove it carefully, survey the new property and refit everything to suit the new layout. Most moves are completed in a single visit.</p>
+              <a href="tel:07404636800" class="mega-card-link">Book a move <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="card overflow-hidden reveal reveal-delay-1">
+            <img src="/assets/survey.jpg" alt="Planning a home security layout" class="w-full aspect-[16/9] object-cover" />
+            <div class="p-7">
+              <h3 class="font-semibold text-lg mb-2">Start fresh at the new place</h3>
+              <p class="text-sm text-slate-soft leading-relaxed">Leaving your system behind, or want an upgrade for the bigger house? We will design a brand new Ajax system around your new home, with a free survey and a fixed one-off price.</p>
+              <a href="/quote" class="mega-card-link">Get a free quote <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checklist -->
+    <section class="py-16 sm:py-20 bg-gray-50">
+      <div class="container-x grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="eyebrow text-brand mb-3">Good To Know</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Moving house security checklist</h2>
+          <ul class="mt-6 space-y-3">
+            <% ['Tell us your completion date as early as you can','Change the locks at your new property on day one','Check which doors and windows the previous owner had covered','Update your address in the Ajax app once we refit your system','Do not post your moving date publicly on social media'].forEach(function(item){ %>
+              <li class="flex items-start gap-3">
+                <span class="grid place-items-center w-6 h-6 rounded-full bg-brand text-white shrink-0 mt-0.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span>
+                <span class="font-medium"><%= item %></span>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="card p-8 bg-brand text-white border-0 reveal reveal-delay-1">
+          <h3 class="text-xl font-semibold">Moving is stressful. This part is not.</h3>
+          <p class="mt-3 text-white/85 leading-relaxed">One call and we handle the security side of your move end to end: uninstall, refit, retest and a fresh walkthrough of the app at your new home.</p>
+          <a href="tel:07404636800" class="btn-white mt-6">Call 07404 636800</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

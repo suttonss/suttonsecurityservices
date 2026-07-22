@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Existing Customers | Sutton Security Systems', pageDesc: 'Support for Sutton Security customers, and everything you need to know about switching to Sutton from another alarm provider.' }) %>
+</head>
+<body class="bg-white">
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Page hero with photo -->
+    <section class="relative overflow-hidden bg-ink text-white">
+      <div class="absolute inset-0">
+        <img src="/assets/family-outside.jpg" alt="" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/25"></div>
+      </div>
+      <div class="container-x relative py-20 sm:py-28">
+        <div class="max-w-xl reveal in">
+          <span class="eyebrow text-white mb-3">Existing Customers</span>
+          <h1 class="text-3xl sm:text-4xl font-semibold leading-[1.1] tracking-tight">We look after our own</h1>
+          <p class="mt-5 text-lg text-white/90 leading-relaxed">Already a Sutton customer? Your installer is one call away. Thinking of joining us from another provider? Switching is easier than you think.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="tel:07404636800" class="btn-cta text-base">Call support: 07404 636800</a>
+            <a href="#switching" class="btn-outline text-base">Switching to Sutton</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer support -->
+    <section class="py-20 sm:py-24">
+      <div class="container-x">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="eyebrow text-brand mb-3">Here For You</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Support from the person who fitted your system</h2>
+          <p class="mt-4 text-slate-soft text-lg">No call centres, no ticket queues. When you contact Sutton, you speak directly to the engineer who knows your home and your system.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <%
+            var supports = [
+              { t: 'Something not right?', d: 'If a sensor is playing up or the app is not behaving, call or WhatsApp us and we will sort it, usually the same day.' },
+              { t: 'Moving home?', d: 'Your Ajax system can move with you. Tell us your moving date and we will uninstall, refit and retest it at your new address.' },
+              { t: 'Growing your system?', d: 'Add cameras, more sensors or smoke detection at any time. You already own the hub, so extending is simple and affordable.' }
+            ];
+          %>
+          <% supports.forEach(function(s, i){ %>
+            <div class="card p-7 reveal reveal-delay-<%= i+1 %>">
+              <h3 class="font-semibold text-lg mb-2"><%= s.t %></h3>
+              <p class="text-sm text-slate-soft leading-relaxed"><%= s.d %></p>
+              <a href="tel:07404636800" class="mega-card-link text-sm">Call us <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- Switching to Sutton -->
+    <section id="switching" class="py-20 sm:py-24 bg-gray-50 scroll-mt-20">
+      <div class="container-x grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="eyebrow text-brand mb-3">Switching To Sutton</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Tied into a subscription alarm? You have options.</h2>
+          <div class="mt-5 space-y-4 text-slate-soft text-lg leading-relaxed">
+            <p>
+              Thousands of UK homeowners pay a monthly fee for an alarm they will never own. If your contract is coming to an end, or you are simply tired of the direct debit, switching to Sutton is straightforward: we survey your home for free, design a wireless Ajax system around it, and install it cleanly in around a day.
+            </p>
+            <p>
+              There is no need to wait for your old system to be removed first. We fit your new system, show you the app, and once you are confident, your old provider's equipment can come off the wall. From that day on there is nothing more to pay. Ever.
+            </p>
+          </div>
+          <ul class="mt-6 space-y-3">
+            <% ['Free, no-obligation switching survey','We work around your existing contract end date','One-time payment from £499.99','Your monthly alarm bill drops to £0'].forEach(function(item){ %>
+              <li class="flex items-center gap-3">
+                <span class="grid place-items-center w-6 h-6 rounded-full bg-brand text-white shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span>
+                <span class="font-semibold"><%= item %></span>
+              </li>
+            <% }) %>
+          </ul>
+          <a href="/quote" class="btn-cta mt-8">Start my switch</a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="/assets/family-home.jpg" alt="Family at home" class="rounded-lg shadow-card w-full object-cover aspect-[4/3]" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Switch steps -->
+    <section class="py-20 sm:py-24">
+      <div class="container-x">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="eyebrow text-brand mb-3">Three Steps</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">How switching works</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <%
+            var steps = [
+              { n: '01', t: 'Tell us about your setup', d: 'Share your current provider, contract end date and what you want from your security. We will give you honest advice, even if that means waiting a month or two.' },
+              { n: '02', t: 'Free switching survey', d: 'We visit, map your home and design your Ajax system. You get a fixed quote with nothing hidden and no pressure.' },
+              { n: '03', t: 'Install day', d: 'We fit and test everything, set up the app on your phone, and walk you through it all. Your last alarm bill becomes exactly that: your last.' }
+            ];
+          %>
+          <% steps.forEach(function(s, i){ %>
+            <div class="relative card p-8 reveal reveal-delay-<%= i+1 %>">
+              <span class="text-4xl font-semibold text-brand/15"><%= s.n %></span>
+              <h3 class="font-semibold text-xl mt-3 mb-2"><%= s.t %></h3>
+              <p class="text-slate-soft leading-relaxed"><%= s.d %></p>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-x">
+        <div class="rounded-lg bg-ink text-white p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 reveal">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Ready to stop renting your alarm?</h2>
+            <p class="mt-2 text-white/80">Get a free quote today and see what you could save.</p>
+          </div>
+          <a href="/quote" class="btn-cta text-base whitespace-nowrap">Get a free quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

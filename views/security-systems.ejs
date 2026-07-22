@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Security Systems | Sutton Security Systems', pageDesc: 'Explore the wireless Ajax security equipment we install: Hub 2 Plus, motion detectors, door contacts and the Ajax app. Owned outright, no monthly fees.' }) %>
+</head>
+<body class="bg-white">
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Page hero -->
+    <section class="bg-gradient-to-br from-brand-darker via-brand-dark to-brand text-white">
+      <div class="container-x py-16 sm:py-20">
+        <span class="eyebrow text-white/80 mb-3">Security Systems</span>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight max-w-2xl">Premium Ajax technology, owned by you</h1>
+        <p class="mt-5 text-lg text-white/85 max-w-2xl">Every Sutton installation is built from professional-grade Ajax equipment, trusted by over 3 million users in 187 countries. You pay once and own every device.</p>
+        <a href="/quote" class="btn-white mt-8">Get a Free Quote</a>
+      </div>
+    </section>
+
+    <!-- Products detail -->
+    <section class="py-20 sm:py-24">
+      <div class="container-x space-y-20">
+
+        <!-- Hub 2 Plus -->
+        <div id="hub" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-28">
+          <div class="rounded-lg overflow-hidden border border-black/10 reveal">
+            <img src="/assets/product-hub.jpg" alt="Ajax Hub 2 Plus control panel" class="w-full aspect-square object-cover" />
+          </div>
+          <div class="reveal reveal-delay-1">
+            <span class="eyebrow text-brand mb-3">Control Panel</span>
+            <h2 class="text-3xl font-semibold tracking-tight">Hub 2 Plus</h2>
+            <p class="mt-4 text-slate-soft text-lg leading-relaxed">The brain of your entire system. It talks to every sensor in your home and to your phone, with multiple backup connections so it never goes quiet.</p>
+            <ul class="mt-6 space-y-3">
+              <% ['Ethernet, Wi-Fi and dual SIM backup connections','Supports 200+ Ajax devices around your home','Battery backup keeps you protected in a power cut','Encrypted, jamming-resistant radio protocol'].forEach(function(item){ %>
+                <li class="flex items-center gap-3"><span class="grid place-items-center w-6 h-6 rounded-full bg-brand text-white shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span><span class="font-medium"><%= item %></span></li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MotionProtect -->
+        <div id="motion" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-28">
+          <div class="order-1 lg:order-2 rounded-lg overflow-hidden border border-black/10 reveal">
+            <img src="/assets/product-motion.jpg" alt="Ajax MotionProtect motion detector" class="w-full aspect-square object-cover" />
+          </div>
+          <div class="order-2 lg:order-1 reveal reveal-delay-1">
+            <span class="eyebrow text-brand mb-3">Motion Detector</span>
+            <h2 class="text-3xl font-semibold tracking-tight">MotionProtect</h2>
+            <p class="mt-4 text-slate-soft text-lg leading-relaxed">Smart PIR motion detection that knows the difference between an intruder and your pet, and tells your phone the second something is wrong.</p>
+            <ul class="mt-6 space-y-3">
+              <% ['Pet-immune up to 20kg','12 metre detection range','Up to 7 years on one battery','Instant push alerts to your phone'].forEach(function(item){ %>
+                <li class="flex items-center gap-3"><span class="grid place-items-center w-6 h-6 rounded-full bg-brand text-white shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span><span class="font-medium"><%= item %></span></li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Door contacts -->
+        <div id="contacts" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-28">
+          <div class="rounded-lg overflow-hidden border border-black/10 reveal">
+            <img src="/assets/product-door.jpg" alt="Ajax DoorProtect door and window contact" class="w-full aspect-square object-cover" />
+          </div>
+          <div class="reveal reveal-delay-1">
+            <span class="eyebrow text-brand mb-3">Entry Protection</span>
+            <h2 class="text-3xl font-semibold tracking-tight">Door &amp; Window Contacts</h2>
+            <p class="mt-4 text-slate-soft text-lg leading-relaxed">Slim, discreet sensors on your doors and windows that detect the moment they are opened, so a break-in never goes unnoticed.</p>
+            <ul class="mt-6 space-y-3">
+              <% ['Instant alert the moment a door or window opens','Discreet, wire-free design in white or black','Detects opening even before glass is broken','Years of battery life with low-battery warnings'].forEach(function(item){ %>
+                <li class="flex items-center gap-3"><span class="grid place-items-center w-6 h-6 rounded-full bg-brand text-white shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span><span class="font-medium"><%= item %></span></li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+        <!-- App -->
+        <div id="app" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-28">
+          <div class="order-1 lg:order-2 rounded-3xl bg-gradient-to-br from-gray-100 to-white border border-black/5 p-12 grid place-items-center reveal">
+            <svg viewBox="0 0 200 150" class="w-full max-w-xs" xmlns="http://www.w3.org/2000/svg">
+              <rect x="72" y="14" width="56" height="122" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+              <rect x="80" y="28" width="40" height="70" rx="6" fill="#FDECEC"/>
+              <circle cx="100" cy="63" r="14" fill="none" stroke="#E1141C" stroke-width="4"/>
+              <path d="M100 55v8l5 5" fill="none" stroke="#E1141C" stroke-width="4" stroke-linecap="round"/>
+              <rect x="86" y="110" width="28" height="6" rx="3" fill="#e5e7eb"/>
+            </svg>
+          </div>
+          <div class="order-2 lg:order-1 reveal reveal-delay-1">
+            <span class="eyebrow text-brand mb-3">Smart App</span>
+            <h2 class="text-3xl font-semibold tracking-tight">Ajax Security App</h2>
+            <p class="mt-4 text-slate-soft text-lg leading-relaxed">Your whole security system in your pocket. Arm and disarm from anywhere, see exactly what triggered and when, and share access with your family.</p>
+            <ul class="mt-6 space-y-3">
+              <% ['Free on iOS and Android','Instant push notifications for every event','Full event history, see who armed and when','Share access with family members'].forEach(function(item){ %>
+                <li class="flex items-center gap-3"><span class="grid place-items-center w-6 h-6 rounded-full bg-brand text-white shrink-0"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2l11-11-1.5-1.5z"/></svg></span><span class="font-medium"><%= item %></span></li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <p class="container-x text-xs text-slate-soft/70 mt-14">Product illustrations shown. Ajax, Hub 2 Plus and MotionProtect are products of Ajax Systems.</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-x">
+        <div class="rounded-3xl bg-gradient-to-br from-brand-darker via-brand-dark to-brand text-white p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 reveal">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Not sure what your home needs?</h2>
+            <p class="mt-2 text-white/85">Answer a few quick questions and we will design the right system for you, free.</p>
+          </div>
+          <a href="/quote" class="btn-white text-base whitespace-nowrap">Start My Free Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

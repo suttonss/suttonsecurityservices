@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Crime In Your Area | Sutton Security Systems', pageDesc: 'Burglary trends across London, Birmingham, Manchester, Leeds and Glasgow, and how a wireless Ajax alarm from Sutton Security protects your home.' }) %>
+</head>
+<body class="bg-white">
+  <%- include('partials/header') %>
+
+  <main>
+    <!-- Page hero -->
+    <section class="bg-gradient-to-br from-brand-darker via-brand-dark to-brand text-white">
+      <div class="container-x py-16 sm:py-20">
+        <span class="eyebrow text-white/80 mb-3">Crime &amp; Safety</span>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight max-w-2xl">Burglary is closer to home than you think</h1>
+        <p class="mt-5 text-lg text-white/85 max-w-2xl">Break-ins are rising across UK cities, and homes with no visible alarm are the easiest target. See what is happening in your area, then find out how to take yourself off the target list.</p>
+        <a href="#checker" class="btn-white mt-8">Check My Postcode</a>
+      </div>
+    </section>
+
+    <!-- CRIME CITY TABS -->
+    <section id="crime" class="py-20 sm:py-24 bg-gray-50">
+      <div class="container-x">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="eyebrow text-brand mb-3">Crime In Your Area</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Select your city</h2>
+        </div>
+
+        <%
+          var cities = [
+            { id: 'london', name: 'London', risk: 'High', stat: '1 in 4', line: 'burglaries in London happen through an unlocked or poorly secured door. A visible, professional alarm is one of the strongest deterrents a burglar will avoid.' },
+            { id: 'birmingham', name: 'Birmingham', risk: 'Elevated', stat: 'Most', line: 'break-ins across the West Midlands occur when the property looks empty. Smart scheduling and phone alerts make your home look lived-in, day or night.' },
+            { id: 'manchester', name: 'Manchester', risk: 'Elevated', stat: '80%', line: 'of burglars say they would avoid a home with a visible alarm. Greater Manchester homeowners are choosing wireless systems they own outright.' },
+            { id: 'leeds', name: 'Leeds', risk: 'Moderate', stat: 'Under 5 min', line: 'is all a typical burglary takes. Instant push alerts mean you know the moment a door or window is opened, wherever you are.' },
+            { id: 'glasgow', name: 'Glasgow', risk: 'Elevated', stat: '2x', line: 'more likely to be targeted, that is roughly how homes with no security measures compare to those that are properly protected.' }
+          ];
+        %>
+        <div class="reveal reveal-delay-1">
+          <div id="cityTabs" class="flex flex-wrap gap-2 mb-6">
+            <% cities.forEach(function(c, idx){ %>
+              <button data-city="<%= c.id %>" class="city-tab px-5 py-2.5 rounded-full text-sm font-semibold border transition-all <%= idx===0 ? 'bg-brand text-white border-brand' : 'bg-white text-ink/70 border-black/10 hover:border-brand hover:text-brand' %>"><%= c.name %></button>
+            <% }) %>
+          </div>
+
+          <div>
+            <% cities.forEach(function(c, idx){ %>
+              <div class="city-panel <%= idx===0 ? '' : 'hidden' %> grid lg:grid-cols-2 gap-6 items-stretch" data-panel="<%= c.id %>">
+                <div class="card p-8">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-semibold tracking-widest uppercase text-slate-soft">Burglary risk</span>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full <%= c.risk==='High' ? 'bg-brand text-white' : c.risk==='Elevated' ? 'bg-orange-100 text-orange-700' : 'bg-yellow-100 text-yellow-700' %>"><%= c.risk %></span>
+                  </div>
+                  <div class="text-4xl font-semibold text-brand"><%= c.stat %></div>
+                  <p class="mt-3 text-slate-soft leading-relaxed"><%= c.line %></p>
+                  <a href="/quote" class="btn-primary mt-6">Protect my <%= c.name %> home</a>
+                </div>
+                <div class="card p-8 bg-ink text-white flex flex-col justify-center">
+                  <svg class="w-10 h-10 text-brand mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/></svg>
+                  <h3 class="text-xl font-semibold">How Sutton protects a <%= c.name %> home</h3>
+                  <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+                    <li class="flex gap-2"><span class="text-brand">&#10003;</span> Visible, professional-grade Ajax alarm that deters intruders</li>
+                    <li class="flex gap-2"><span class="text-brand">&#10003;</span> Instant phone alerts the second a sensor is triggered</li>
+                    <li class="flex gap-2"><span class="text-brand">&#10003;</span> Works during power cuts and Wi-Fi drops</li>
+                    <li class="flex gap-2"><span class="text-brand">&#10003;</span> No monthly fees, ever, you own the whole system</li>
+                  </ul>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-soft/80 mt-6 max-w-3xl">
+          Figures shown are indicative and drawn from widely reported national trends, including the Crime Survey for England and Wales. They are intended as general guidance. Contact us for a free, tailored assessment of your own property.
+        </p>
+      </div>
+    </section>
+
+    <!-- POSTCODE CHECKER -->
+    <section id="checker" class="py-16 bg-brand text-white scroll-mt-20">
+      <div class="container-x">
+        <div class="rounded-3xl bg-white/10 border border-white/15 p-8 sm:p-10 grid lg:grid-cols-2 gap-8 items-center reveal">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Is your area a target?</h2>
+            <p class="mt-3 text-white/85">Enter your postcode and we will be in touch with a free, no-obligation home security review tailored to where you live.</p>
+          </div>
+          <form id="postcodeForm" class="flex flex-col sm:flex-row gap-3">
+            <input id="postcodeInput" type="text" required placeholder="Enter your postcode" class="flex-1 rounded-full px-6 py-4 text-ink placeholder:text-ink/40 focus:outline-none focus:ring-4 focus:ring-white/30" />
+            <button type="submit" class="btn-white text-base whitespace-nowrap">Check My Area</button>
+          </form>
+          <p id="postcodeResult" class="hidden lg:col-span-2 text-white bg-black/20 rounded-xl px-5 py-3 text-sm"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section class="py-20 sm:py-24">
+      <div class="container-x">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="eyebrow text-brand mb-3">Stay Safe</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Five habits that put burglars off</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <%
+            var tips = [
+              { t: 'Make it look occupied', d: 'Lights on timers and a car in the drive make opportunists move on. Most burglars want an empty house.' },
+              { t: 'Lock up properly', d: 'A surprising share of break-ins involve an unlocked door or window. Double-lock every time you leave.' },
+              { t: 'Show your security', d: 'A visible alarm and sensors in the window are the single biggest turn-off for an intruder casing your street.' },
+              { t: 'Do not advertise online', d: 'Holiday posts tell burglars exactly when your home is empty. Share the photos when you are back.' },
+              { t: 'Know the moment it happens', d: 'Instant phone alerts mean you can act in seconds, check the app, alert a neighbour and call the police.' },
+              { t: 'Secure the side gate', d: 'Most intruders go around the back where they cannot be seen. Contacts on back doors close the gap.' }
+            ];
+          %>
+          <% tips.forEach(function(tip, i){ %>
+            <div class="card p-6 reveal reveal-delay-<%= (i % 3) + 1 %>">
+              <span class="grid place-items-center w-10 h-10 rounded-full bg-brand text-white font-semibold mb-4"><%= i + 1 %></span>
+              <h3 class="font-semibold text-lg mb-2"><%= tip.t %></h3>
+              <p class="text-sm text-slate-soft leading-relaxed"><%= tip.d %></p>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
