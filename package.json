@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./public/css/styles.css --minify",
-    "build": "tailwindcss -i ./src/input.css -o ./public/css/styles.css --minify",
+    "build": "npm run build:css && node scripts/build-static.js",
     "start": "node index.js"
   },
   "dependencies": {
