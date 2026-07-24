@@ -7,8 +7,27 @@
   <%- include('partials/header') %>
 
   <main>
-    <!-- HERO: full-bleed lifestyle photo, ADT style -->
-    <section class="relative overflow-hidden bg-ink text-white">
+    <!-- MOBILE HERO: clean ADT-style card (mobile only) -->
+    <section class="lg:hidden px-4 pt-5 pb-4 bg-white">
+      <div class="rounded-2xl border border-black/10 shadow-soft overflow-hidden">
+        <img src="/assets/family-home.jpg" alt="A protected family home" class="w-full h-56 object-cover" />
+        <div class="px-6 py-8">
+          <h1 class="text-[2.15rem] leading-[1.08] font-semibold tracking-tight text-ink">
+            You can't always be home. Your security can.
+          </h1>
+          <p class="mt-4 text-[17px] text-slate-soft leading-relaxed">
+            Wireless Ajax alarms, owned outright. No monthly fees, ever.
+          </p>
+          <div class="mt-7 flex flex-col gap-3">
+            <a href="/quote" class="btn-cta w-full text-base py-4">Get a free quote</a>
+            <a href="/crime-in-your-area" class="btn-ghost w-full text-base py-4">Check crime in my area</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO: full-bleed lifestyle photo, ADT style (desktop / tablet) -->
+    <section class="relative overflow-hidden bg-ink text-white hidden lg:block">
       <div class="absolute inset-0">
         <img src="/assets/family-home.jpg" alt="" class="w-full h-full object-cover object-center" />
         <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/20"></div>
