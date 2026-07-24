@@ -5,6 +5,9 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Cache-busting token for CSS/JS (fresh each server start)
+app.locals.build = Date.now();
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {

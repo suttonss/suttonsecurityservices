@@ -9,7 +9,7 @@
 
   function setOpen(open) {
     isOpen = open;
-    menu.classList.toggle('-translate-x-full', !open);
+    menu.classList.toggle('is-open', open);
     menu.setAttribute('aria-hidden', String(!open));
     btn.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';

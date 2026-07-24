@@ -39,9 +39,12 @@ async function build() {
   // Copy static assets (css, js, images, robots, sitemap)
   fs.cpSync(PUBLIC, DIST, { recursive: true });
 
+  // Single cache-busting token for this build, shared across all pages
+  const build = Date.now();
+
   // Render each page
   for (const [route, view] of Object.entries(pages)) {
-    const html = await ejs.renderFile(path.join(VIEWS, view + '.ejs'), {}, {
+    const html = await ejs.renderFile(path.join(VIEWS, view + '.ejs'), { build }, {
       views: [VIEWS]
     });
     const file = outPath(route);
