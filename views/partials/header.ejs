@@ -162,8 +162,9 @@
     </button>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="lg:hidden hidden border-t border-black/5 bg-white max-h-[80vh] overflow-y-auto">
+  <!-- Mobile menu: absolute dropdown overlay, animates in without pushing content -->
+  <div id="menuScrim" class="lg:hidden fixed inset-0 bg-black/40 z-[45] opacity-0 invisible transition-opacity duration-300"></div>
+  <div id="mobileMenu" aria-hidden="true" class="lg:hidden absolute left-0 right-0 top-full z-50 bg-white border-t border-black/10 shadow-2xl max-h-[85vh] overflow-y-auto opacity-0 -translate-y-3 pointer-events-none transition-all duration-300 ease-out">
     <nav class="container-x py-4 flex flex-col">
       <details class="group border-b border-black/5">
         <summary class="flex items-center justify-between py-3.5 font-semibold text-ink cursor-pointer list-none">How Sutton Works <svg class="w-4 h-4 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
