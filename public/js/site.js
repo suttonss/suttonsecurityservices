@@ -2,9 +2,12 @@
 (function () {
   var btn = document.getElementById('menuBtn');
   var menu = document.getElementById('mobileMenu');
-  var closeBtn = document.getElementById('menuClose');
+  var icon = document.getElementById('menuIcon');
+  var label = document.getElementById('menuLabel');
   if (!btn || !menu) return;
 
+  var HAMBURGER = 'M4 7h16M4 12h16M4 17h16';
+  var CROSS = 'M6 6l12 12M18 6L6 18';
   var isOpen = false;
 
   function setOpen(open) {
@@ -12,11 +15,13 @@
     menu.classList.toggle('is-open', open);
     menu.setAttribute('aria-hidden', String(!open));
     btn.setAttribute('aria-expanded', String(open));
+    // The navbar button morphs between Menu and Close
+    if (icon) icon.querySelector('path').setAttribute('d', open ? CROSS : HAMBURGER);
+    if (label) label.textContent = open ? 'Close' : 'Menu';
     document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  btn.addEventListener('click', function () { setOpen(true); });
-  if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
+  btn.addEventListener('click', function () { setOpen(!isOpen); });
   menu.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () { setOpen(false); });
   });
