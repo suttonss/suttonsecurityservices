@@ -142,12 +142,37 @@
    Sits directly below the 80px mobile navbar, which stays visible. */
 #mobileMenu {
   top: 80px;
-  background: #F2F3F5;
+  background: #FFFFFF;
   transform: translateX(-100%);
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 #mobileMenu.is-open {
   transform: translateX(0);
+}
+
+/* Mobile menu accordions: smooth open/close instead of snapping */
+.acc-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.acc-body > div {
+  overflow: hidden;
+  min-height: 0; /* let the grid row collapse fully to zero */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.acc.is-open > .acc-body {
+  grid-template-rows: 1fr;
+}
+.acc.is-open > .acc-body > div {
+  opacity: 1;
+}
+.acc-chev {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.acc.is-open .acc-chev {
+  transform: rotate(180deg);
 }
 
 /* Animated hamburger: three bars that morph into an X */

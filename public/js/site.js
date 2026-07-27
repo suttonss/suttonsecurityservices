@@ -19,6 +19,16 @@
   }
 
   btn.addEventListener('click', function () { setOpen(!isOpen); });
+
+  // Nav accordions: animate open/close via CSS
+  menu.querySelectorAll('.acc-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var acc = trigger.closest('.acc');
+      var open = !acc.classList.contains('is-open');
+      acc.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+    });
+  });
   menu.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () { setOpen(false); });
   });

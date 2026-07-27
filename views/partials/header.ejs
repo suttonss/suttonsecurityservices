@@ -173,32 +173,53 @@
   <div id="mobileMenu" aria-hidden="true" class="lg:hidden fixed left-0 right-0 bottom-0 z-40 flex flex-col">
     <!-- Scrollable nav -->
     <nav class="flex-1 overflow-y-auto px-5 py-2 flex flex-col">
-      <details class="group border-b border-black/5">
-        <summary class="flex items-center justify-between py-4 text-lg font-semibold text-ink cursor-pointer list-none">How Sutton Works <svg class="w-5 h-5 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <div class="pb-3 pl-1 flex flex-col text-base text-slate-soft">
-          <a href="/why-sutton#process" class="py-2.5">Our 3-Step Process</a>
-          <a href="/why-sutton#compare" class="py-2.5">Compare Providers</a>
-          <a href="/why-sutton#cost" class="py-2.5">The True Cost</a>
-          <a href="/why-sutton#reviews" class="py-2.5">Customer Reviews</a>
+      <div class="acc border-b border-black/5">
+        <button type="button" class="acc-trigger flex items-center justify-between w-full py-4 text-lg font-semibold text-ink text-left" aria-expanded="false">
+          How Sutton Works
+          <svg class="acc-chev w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-body">
+          <div>
+            <div class="pb-3 pl-1 flex flex-col text-base text-slate-soft">
+              <a href="/why-sutton#process" class="py-2.5">Our 3-Step Process</a>
+              <a href="/why-sutton#compare" class="py-2.5">Compare Providers</a>
+              <a href="/why-sutton#cost" class="py-2.5">The True Cost</a>
+              <a href="/why-sutton#reviews" class="py-2.5">Customer Reviews</a>
+            </div>
+          </div>
         </div>
-      </details>
-      <details class="group border-b border-black/5">
-        <summary class="flex items-center justify-between py-4 text-lg font-semibold text-ink cursor-pointer list-none">Security Systems <svg class="w-5 h-5 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <div class="pb-3 pl-1 flex flex-col text-base text-slate-soft">
-          <a href="/security-systems#hub" class="py-2.5">Hub 2 Plus</a>
-          <a href="/security-systems#motion" class="py-2.5">Motion Detectors</a>
-          <a href="/security-systems#contacts" class="py-2.5">Door &amp; Window Contacts</a>
-          <a href="/security-systems#app" class="py-2.5">Ajax Security App</a>
+      </div>
+      <div class="acc border-b border-black/5">
+        <button type="button" class="acc-trigger flex items-center justify-between w-full py-4 text-lg font-semibold text-ink text-left" aria-expanded="false">
+          Security Systems
+          <svg class="acc-chev w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-body">
+          <div>
+            <div class="pb-3 pl-1 flex flex-col text-base text-slate-soft">
+              <a href="/security-systems#hub" class="py-2.5">Hub 2 Plus</a>
+              <a href="/security-systems#motion" class="py-2.5">Motion Detectors</a>
+              <a href="/security-systems#contacts" class="py-2.5">Door &amp; Window Contacts</a>
+              <a href="/security-systems#app" class="py-2.5">Ajax Security App</a>
+            </div>
+          </div>
         </div>
-      </details>
-      <details class="group border-b border-black/5">
-        <summary class="flex items-center justify-between py-4 text-lg font-semibold text-ink cursor-pointer list-none">Crime In My Area <svg class="w-5 h-5 group-open:rotate-180 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <div class="pb-3 pl-1 flex flex-col text-base text-slate-soft">
-          <a href="/crime-in-your-area" class="py-2.5">Crime In Your Area</a>
-          <a href="/crime-in-your-area#checker" class="py-2.5">Check Your Postcode</a>
-          <a href="/#faq" class="py-2.5">Home Security FAQ</a>
+      </div>
+      <div class="acc border-b border-black/5">
+        <button type="button" class="acc-trigger flex items-center justify-between w-full py-4 text-lg font-semibold text-ink text-left" aria-expanded="false">
+          Crime In My Area
+          <svg class="acc-chev w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-body">
+          <div>
+            <div class="pb-3 pl-1 flex flex-col text-base text-slate-soft">
+              <a href="/crime-in-your-area" class="py-2.5">Crime In Your Area</a>
+              <a href="/crime-in-your-area#checker" class="py-2.5">Check Your Postcode</a>
+              <a href="/#faq" class="py-2.5">Home Security FAQ</a>
+            </div>
+          </div>
         </div>
-      </details>
+      </div>
     </nav>
     <!-- Sticky footer: call action, then the utility bar -->
     <div class="shrink-0">
