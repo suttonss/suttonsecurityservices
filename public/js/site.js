@@ -2,22 +2,19 @@
 (function () {
   var btn = document.getElementById('menuBtn');
   var menu = document.getElementById('mobileMenu');
-  var icon = document.getElementById('menuIcon');
-  var label = document.getElementById('menuLabel');
   if (!btn || !menu) return;
 
-  var HAMBURGER = 'M4 7h16M4 12h16M4 17h16';
-  var CROSS = 'M6 6l12 12M18 6L6 18';
   var isOpen = false;
 
   function setOpen(open) {
     isOpen = open;
+    // CSS drives the animations: the bars morph to an X and the label
+    // crossfades from Menu to Close.
     menu.classList.toggle('is-open', open);
+    btn.classList.toggle('is-open', open);
     menu.setAttribute('aria-hidden', String(!open));
     btn.setAttribute('aria-expanded', String(open));
-    // The navbar button morphs between Menu and Close
-    if (icon) icon.querySelector('path').setAttribute('d', open ? CROSS : HAMBURGER);
-    if (label) label.textContent = open ? 'Close' : 'Menu';
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
   }
 

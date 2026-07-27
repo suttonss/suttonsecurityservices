@@ -159,15 +159,18 @@
     <!-- Mobile controls: quote button, then hamburger + Menu label -->
     <div class="flex items-center gap-3 lg:hidden shrink-0">
       <a href="/quote" class="btn-cta text-sm px-4 py-2.5">Get a free quote</a>
-      <button id="menuBtn" class="flex items-center gap-1.5 h-11 pl-1 pr-0.5 text-ink" aria-label="Toggle menu" aria-expanded="false">
-        <svg id="menuIcon" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <span id="menuLabel" class="text-sm font-semibold">Menu</span>
+      <button id="menuBtn" class="flex items-center gap-2 h-11 pl-1 pr-0.5 text-ink" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="menu-label text-sm font-semibold" aria-hidden="true">
+          <span class="lbl-menu">Menu</span>
+          <span class="lbl-close">Close</span>
+        </span>
       </button>
     </div>
   </div>
 
   <!-- Mobile menu: slides in from the left, sits BELOW the navbar which stays put -->
-  <div id="mobileMenu" aria-hidden="true" class="lg:hidden fixed left-0 right-0 bottom-0 z-40 bg-white flex flex-col">
+  <div id="mobileMenu" aria-hidden="true" class="lg:hidden fixed left-0 right-0 bottom-0 z-40 flex flex-col">
     <!-- Scrollable nav -->
     <nav class="flex-1 overflow-y-auto px-5 py-2 flex flex-col">
       <details class="group border-b border-black/5">
