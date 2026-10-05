@@ -1,3 +1,5 @@
+<%- include('trustpilot-banner') %>
+
 <!-- Top utility bar, ADT style (desktop only, links live in the menu on mobile) -->
 <div class="hidden lg:block bg-ink text-white text-xs">
   <div class="container-x flex items-center justify-between h-9">
@@ -235,3 +237,40 @@
     </div>
   </div>
 </header>
+
+<script>
+  (() => {
+    const header = document.getElementById('siteHeader');
+    const menu = document.getElementById('mobileMenu');
+    const button = document.getElementById('menuBtn');
+    if (!header || !menu || !button) return;
+
+    let pendingFrame = null;
+
+    function updateMenuPosition() {
+      pendingFrame = null;
+      const headerBottom = Math.max(0, header.getBoundingClientRect().bottom);
+      menu.style.top = `${headerBottom}px`;
+    }
+
+    function scheduleUpdate() {
+      if (pendingFrame === null) {
+        pendingFrame = window.requestAnimationFrame(updateMenuPosition);
+      }
+    }
+
+    updateMenuPosition();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    window.addEventListener('load', scheduleUpdate, { once: true });
+    document.addEventListener('DOMContentLoaded', scheduleUpdate, { once: true });
+    button.addEventListener('click', scheduleUpdate);
+
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(scheduleUpdate);
+      observer.observe(header);
+      const banner = document.querySelector('.trustpilot-banner');
+      if (banner) observer.observe(banner);
+    }
+  })();
+</script>
